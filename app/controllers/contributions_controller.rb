@@ -4,14 +4,15 @@ class ContributionsController < ApplicationController
 
     end
 
-    def create 
-
+    def create
+      contribution = Contribution.create(contribution_params)
+      redirect_to story_url(:id)
     end
-
+  
     private
-
-    def contributions_params
-
+  
+    def contribution_params
+      params.require(:contribution).permit(:body)
+    #   , :story_id, :user_id, user_attributes:[:first_name][:last_name])
     end
-
 end

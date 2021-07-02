@@ -1,6 +1,8 @@
-<h1>Stories</h1>
+<h1>Story Chains</h1>
 <ul>
   <% @stories.each do |story| %>
-  <li><%= link_to story.name, story_path(story) %> </li>
+  <li><%= link_to story.hook, story_path(story) %> </li>
   <% end %>
 </ul>
+
+<a href="/stories/new">Create a New Story</a>

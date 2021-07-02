@@ -1,0 +1,9 @@
+<h1>Start a New Story!</h1>
+
+<%= form_for @story do |f| %>
+  <%= f.label :hook %>
+  <%= f.text_field :hook %><br>
+  <br />
+
+  <%= f.submit %>
+<% end %>
