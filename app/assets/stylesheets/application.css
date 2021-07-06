@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     background-color: antiquewhite;
+     padding-left: 10vw;
+     padding-right: 10vw;
+
+     font-family: 'Courier New', Courier, monospace;
+ }
+
+ .logo {
+    letter-spacing: 1em;
+    font-weight: bolder;
+    color: grey;
+
+    
+
+    animation: fancy 8s infinite alternate forwards;
+  }
+  
+  @keyframes fancy {
+    0% {
+        letter-spacing: 1em;
+
+    }
+  
+    100% {
+        letter-spacing: 2em;
+    }
+  }

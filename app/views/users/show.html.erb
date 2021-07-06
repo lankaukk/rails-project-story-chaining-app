@@ -1,0 +1,8 @@
+<h1>Welcome to <%= @user.first_name %>'s homepage! </h1>
+
+<h3>Here are the stories by <%=@user.first_name%>:</h3>
+<ul>
+  <% @user.stories.each do |s|%>
+  <li> <%= story_path(s)%> </li>
+  <% end %>
+</ul>
