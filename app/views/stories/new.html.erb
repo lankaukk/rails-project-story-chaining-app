@@ -1,6 +1,18 @@
 <h1>Start a New Story!</h1>
 
 <%= form_for @story do |f| %>
+
+<% if @story.errors.any? %>
+    <div id= "error_explanation">
+        <h2> <%= @story.errors.size%> error(s): </h2>
+        <ul>
+            <% @story.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
   <%= f.label :hook %>
   <%= f.text_field :hook %><br>
   <br />
