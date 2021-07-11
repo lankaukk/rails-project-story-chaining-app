@@ -4,24 +4,26 @@ class StoriesController < ApplicationController
         @stories = Story.all
     end
 
-    def show
-        @story = Story.find(params[:id])
-        @contributions = @story.contributions.all
-    end
-
     def new 
         @story = Story.new
     end
 
     def create
         @story = Story.new(story_params)
+        @story.user_id = current_user.id
+        
     
         if @story.save
           redirect_to @story
         else
-          render :new
+          render '/stories/new'
         end
       end
+
+    def show
+        @story = Story.find(params[:id])
+        @contributions = @story.contributions.all
+    end
 
     def edit 
         @story = Story.find(params[:id])

@@ -1,8 +1,20 @@
 <h1>Welcome to your story chains, <%= @user.first_name %> </h1>
+<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+<h3>"<%= @user.bio %>" </h3>
 
-<h3>Here are the stories by <%=@user.first_name%>:</h3>
+<br>
+
+<h3>You have started 
+  <%= @user.stories.count %>
+    story chains, <%=@user.first_name%>:</h3>
 <ul>
   <% @user.stories.each do |s|%>
   <li> <%= story_path(s)%> </li>
   <% end %>
 </ul>
+
+<a href="/stories/new">Create a New Story</a><br>
+<%= link_to "All Stories", stories_path, method: :get %>
+<br><br>
+
+<%= link_to "Log Out", logout_path, method: :delete %>

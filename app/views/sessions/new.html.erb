@@ -1,22 +1,19 @@
 <h1>Login!</h1>
 
-
-<%= form_for(:user) do |f|%>
-
-  <% if @user.errors.any? %>
-        <div id= "error_explanation">
-            <h2> <%= @user.errors.size%> error(s): </h2>
-            <ul>
-                <% @user.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log In" %>
+<% flash.each do |type, msg| %>
+    <div id="error_explanation">
+        <%= msg %>
+    </div>
+    <br>
 <% end %>
+
+<%= form_tag("/login", method: "post") do %>
+    <label>Email: </label>
+    <input type="text" id="email" name="email"><br>
+    <label>Password: </label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Log In">
+<% end %>
+
+<br>
+

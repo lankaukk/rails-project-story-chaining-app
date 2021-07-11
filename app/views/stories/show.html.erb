@@ -1,6 +1,7 @@
 <h1><%= @story.hook %></h1>
 <p>
-  Started on <%= @story.created_at.strftime("%b %d, %Y") %>
+  Started on <%= @story.created_at.strftime("%b %d, %Y") %> 
+  by <%= @story.users.first.first_name %>
 </p>
 
 <p>

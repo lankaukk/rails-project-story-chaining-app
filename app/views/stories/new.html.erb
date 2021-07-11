@@ -1,5 +1,7 @@
 <h1>Start a New Story!</h1>
 
+<%= render partial: "/shared/errors", locals: {object: @story} %>
+
 <%= form_for @story do |f| %>
 
 <% if @story.errors.any? %>
