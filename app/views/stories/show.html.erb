@@ -1,8 +1,10 @@
-<h1><%= @story.hook %></h1>
+
 <p>
   Started on <%= @story.created_at.strftime("%b %d, %Y") %> 
-  by <%= @story.users.first.first_name %>
+  by <%= @story.user_id %>
 </p>
+
+<h1><%= @story.hook %></h1>
 
 <p>
     <% @contributions.each do |c| %>

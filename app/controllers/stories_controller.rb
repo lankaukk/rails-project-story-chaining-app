@@ -9,10 +9,8 @@ class StoriesController < ApplicationController
     end
 
     def create
-        @story = Story.new(story_params)
-        @story.user_id = current_user.id
+        @story = current_user.stories.build(story_params)
         
-    
         if @story.save
           redirect_to @story
         else
@@ -21,7 +19,7 @@ class StoriesController < ApplicationController
       end
 
     def show
-        @story = Story.find(params[:id])
+        @story = Story.find_by_id(params[:id])
         @contributions = @story.contributions.all
     end
 

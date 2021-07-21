@@ -1,11 +1,18 @@
 class ContributionsController < ApplicationController
 
-    def new 
+    def index
+      @contributions = Contribution.all
+    end
 
+    def new 
+      @contribution = Contribution.new
     end
 
     def create
-      contribution = Contribution.create(contribution_params)
+      @contribution = current_user.contributions.build(contribution_params)
+      
+      @contribution.user_id = current_user.id
+      
       redirect_to story_url(:id)
     end
   

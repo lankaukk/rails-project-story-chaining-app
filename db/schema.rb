@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_07_02_042203) do
   create_table "stories", force: :cascade do |t|
     t.string "hook"
     t.integer "user_id"
+    t.string "contributions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
