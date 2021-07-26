@@ -10,16 +10,19 @@ class ContributionsController < ApplicationController
 
     def create
       @contribution = current_user.contributions.build(contribution_params)
-      
-      @contribution.user_id = current_user.id
-      
-      redirect_to story_url(:id)
+
+      if @contribution.save
+        redirect_to @contribution.story
+      else
+        flash[:notice] = "Didn't work."
+        redirect_to @contribution.story
+      end
     end
   
     private
   
     def contribution_params
-      params.require(:contribution).permit(:body)
+      params.require(:contribution).permit(:body, :story_id)
     #   , :story_id, :user_id, user_attributes:[:first_name][:last_name])
     end
 end

@@ -29,9 +29,7 @@ class StoriesController < ApplicationController
 
     def update 
         @story = Story.find(params[:id])
-        @story.update(story_params)
-
-        if @story.save 
+        if @story.update(story_params)
             redirect_to @story
         else
             render :edit

@@ -5,12 +5,16 @@
     end
 
     def create
-        @user = User.new(user_params)
-        if @user.save
-            session[:user_id] = @user.id
-            redirect_to user_path(@user)
+        if auth
+            User.find_or_create_from_github(auth)
         else
-            render '/users/new'
+            @user = User.new(user_params)
+            if @user.save
+                session[:user_id] = @user.id
+                redirect_to user_path(@user)
+            else
+                render '/users/new'
+            end
         end
     end
 
@@ -25,4 +29,9 @@
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :bio, :password, :password_confirmation)
     end
+
+    def auth 
+        request.env['omniauth.auth']
+    end
+
 end

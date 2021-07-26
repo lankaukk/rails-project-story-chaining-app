@@ -15,7 +15,7 @@
  */
 
  body {
-     background-color: antiquewhite;
+     background-color: ;
      padding-left: 10vw;
      padding-right: 10vw;
 
@@ -42,3 +42,12 @@
 #error_explanation {
     color: rgb(175, 8, 8);
   }
+
+.story {
+  background-color: antiquewhite;
+  padding: 3%;
+}
+
+textarea, input {
+  width: 100%;
+}
