@@ -1,0 +1,32 @@
+
+<p>
+Started on <%= @story.created_at.strftime("%b %d, %Y") %> 
+
+</p>
+
+<div class="story">
+<h1><%= @story.hook %></h1>
+
+<h1>
+    <% @contributions.each do |c| %>
+        <%= c.body %>
+    <% end %>
+</h1>
+</div>
+
+## make a nested new form?
+
+
+<%= form_for @story.contributions.build do |f| %>
+  <%= f.hidden_field :story_id, value: @story.id %>
+  
+  <p>
+    <%= f.label :content, "Continue the story..." %><br><br>
+    <%= f.text_area :body %>
+  </p>
+  
+  <%= f.submit %>
+<% end %>
+
+<br>
+<br>

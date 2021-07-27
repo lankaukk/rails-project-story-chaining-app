@@ -16,7 +16,7 @@ class StoriesController < ApplicationController
         else
           render '/stories/new'
         end
-      end
+    end
 
     def show
         @story = Story.find_by_id(params[:id])

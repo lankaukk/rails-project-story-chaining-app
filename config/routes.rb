@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :stories, only: [:show] do
     resources :contributions, only: [:new, :index, :show]
   end
+
   resources :contributions
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

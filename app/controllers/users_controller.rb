@@ -1,5 +1,9 @@
   class UsersController < ApplicationController
 
+    def index
+        redirect_to users_path
+    end
+
     def new
         @user = User.new
     end
@@ -19,9 +23,12 @@
     end
 
     def show
-        # redirect_if_not_logged_in
-        @user = User.find_by_id(params[:id])
-        redirect_to '/' if !@user
+        if !logged_in?
+            redirect_to '/'
+        else
+            @user = current_user
+            @stories = @user.stories
+        end
     end
      
     private
