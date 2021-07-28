@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
 
     def create
         if auth 
-            user = User.find_or_create_by(email: auth['info']['email']) do |u|
-                u.password = SecureRandom.hex(12)
-            end
-            # @user = User.find_or_create_from_github(auth)
+            # user = User.find_or_create_by(email: auth['info']['email']) do |u|
+            #     u.password = SecureRandom.hex(12)
+            # end
+            ##this line wass commented out v
+            user = User.find_or_create_from_github(auth)
             if user 
                 redirect_to user_path
             else

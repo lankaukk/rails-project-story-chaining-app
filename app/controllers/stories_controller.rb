@@ -2,6 +2,11 @@ class StoriesController < ApplicationController
     
     def index
         @stories = Story.most_recent
+        if !logged_in?
+            redirect_to '/'
+        else
+            @user = current_user
+        end
     end
 
     def new 
@@ -37,10 +42,12 @@ class StoriesController < ApplicationController
     end 
 
     def destroy
-        @story = Story.find(params[:id])
-        @story.destroy
-        flash[:notice] = "Story deleted."
-        redirect_to stories_path
+        # @story = Story.find(params[:id])
+        # @story.destroy
+        # flash[:notice] = "Story deleted."
+        # redirect_to stories_path
+        session.delete(:user_id)
+        redirect_to '/'
     end
 
     private

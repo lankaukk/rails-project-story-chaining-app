@@ -1,4 +1,4 @@
-<h1>Welcome to your story chains, <%= @user.first_name %> </h1>
+<h1>Welcome to Story Chains, <%= @user.first_name %> </h1>
 <h3><%= @user.first_name %> <%= @user.last_name %></h3>
 <h3>"<%= @user.bio %>" </h3>
 
@@ -8,12 +8,11 @@
   <%= @user.contributions.count %>
     story chains, <%=@user.first_name%>:</h3>
 <ul>
-  # <% @user.contributions.each do |s|%>
-  #   <li>  <%= link_to story_path(s) %> </li>
-  # <% end %>
-  <% @stories.hook.each do |story| %>
-    <li><%= link_to story.hook, story_path(story) %> </li>
-    <% end %>
+  <% @user.contributions.each do |s|%>
+    <li>  <%= link_to story_path(s) %> </li>
+  <% end %>
+
+  
 </ul>
 
 <a href="/stories/new">Create a New Story</a><br>

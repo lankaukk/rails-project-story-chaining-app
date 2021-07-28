@@ -9,9 +9,12 @@ class User < ApplicationRecord
     validates :bio, length: { maximum: 500 }
 
     def self.find_or_create_from_github(auth)
-        user = user.find_or_create_by(email: auth["info"]["email"]) do |u|
-            u.password = SecureRandom.hex
-            u.email = auth[:info][:email]
+        # user = user.find_or_create_by(email: auth["info"]["email"]) do |u|
+        #     u.password = SecureRandom.hex
+        #     u.email = auth[:info][:email]
+        # end
+        user = User.find_or_create_by(email: auth['info']['email']) do |u|
+            u.password = SecureRandom.hex(12)
         end
     end
     

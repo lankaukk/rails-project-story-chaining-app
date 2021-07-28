@@ -1,3 +1,5 @@
+<%= link_to "Back to all Stories", stories_path, method: :get %>
+<br><br>
 
 <p>
 Started on <%= @story.created_at.strftime("%b %d, %Y") %> 
@@ -14,7 +16,6 @@ Started on <%= @story.created_at.strftime("%b %d, %Y") %>
 </h1>
 </div>
 
-## make a nested new form?
 
 
 <%= form_for @story.contributions.build do |f| %>
