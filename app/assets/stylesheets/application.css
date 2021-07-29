@@ -20,8 +20,8 @@ body {
   padding-bottom: 10vw;
 
   font-family: 'Courier New', Courier, monospace;
-  background-image: url("chain.png");
-  background-repeat: no-repeat;
+  background-image: url("papers.png");
+  background-repeat:repeat-y;
 }
 
 .chains {
@@ -53,9 +53,9 @@ body {
   }
 
 .story {
-  background-color: rgb(195, 231, 239);
+  background-color: rgb(214, 241, 247);
   padding: 3%;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 textarea, input {
@@ -64,9 +64,9 @@ textarea, input {
 }
 
 li {
-  background-color: rgb(195, 231, 239);
+  background-color: rgb(214, 241, 247);
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 10px;
 }
 
