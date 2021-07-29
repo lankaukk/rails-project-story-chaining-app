@@ -11,6 +11,7 @@
     def create
         if auth
             User.find_or_create_from_github(auth)
+            binding.pry
         else
             @user = User.new(user_params)
             if @user.save

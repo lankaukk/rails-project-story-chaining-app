@@ -1,21 +1,23 @@
-<h1>Welcome to Story Chains, <%= @user.first_name %> </h1>
+<h1>Welcome to Story Chains <%= @user.email %> </h1>
 <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-<h3>"<%= @user.bio %>" </h3>
 
-<br>
-
-<h3>You have participated in
-  <%= @user.contributions.count %>
-    story chains, <%=@user.first_name%>:</h3>
-
-<ul>
-  <% @user.contributions.each do |c|%>
-    <li>  <%= link_to c.story.hook, story_path(c.story) %> </li>
-  <% end %>
-</ul>
+<h3><%= @user.bio %> </h3>
 
 <a href="/stories/new">Create a New Story</a><br>
 <%= link_to "All Stories", stories_path, method: :get %>
 <br><br>
 
 <%= link_to "Log Out", logout_path, method: :delete %>
+
+<br>
+
+<h3>You have participated in
+  <%= @user.contributions.count %>
+    story chains <%=@user.first_name%>:</h3>
+
+<ul>
+  <% @user.contributions.reverse.each do |c|%>
+    <li>  <%= link_to c.story.hook, story_path(c.story) %> </li>
+  <% end %>
+</ul>
+

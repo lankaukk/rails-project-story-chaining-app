@@ -11,16 +11,10 @@ class ContributionsController < ApplicationController
     end
 
     def create
-     
-      # @story = Story.find_by_id(params[:story_id])
-      # @contribution = @story.contributions.build(contribution_params)
-
-      @contribution = current_user.contributions.build(contribution_params)
-      
+    @contribution = current_user.contributions.build(contribution_params)
       if !@contribution.save
-        flash[:notice] = "Didn't work." 
+        flash.alert = "Didn't work."
       end
-      
       redirect_to @contribution.story
     end
   

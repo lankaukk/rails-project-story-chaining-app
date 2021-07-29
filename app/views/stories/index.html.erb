@@ -1,5 +1,7 @@
-<h1>Hey, <%= link_to @user.first_name, user_path(@user) %> </h1>
+<h1>Hey <%= link_to @user.first_name, user_path(@user) %> </h1>
 <%= link_to "Log Out", logout_path, method: :delete %>
+<br><br>
+<a href="/stories/new">Create a New Story</a>
 
 <h1>Story Chains</h1>
 <ul>
@@ -8,4 +10,3 @@
   <% end %>
 </ul>
 
-<a href="/stories/new">Create a New Story</a>

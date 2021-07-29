@@ -1,33 +1,32 @@
 <%= link_to "Back to all Stories", stories_path, method: :get %>
 <br><br>
-
 <p>
-Started on <%= @story.created_at.strftime("%b %d, %Y") %> 
-
+  Started on <%= @story.created_at.strftime("%b %d, %Y") %> 
+  
 </p>
 
 <div class="story">
-<h1><%= @story.hook %></h1>
+  <h1><%= @story.hook %></h1>
 
-<h1>
-    <% @contributions.each do |c| %>
-        <%= c.body %>
-    <% end %>
-</h1>
+  <h1>
+      <% @contributions.each do |c| %>
+          <%= c.body %>
+      <% end %>
+  </h1>
 </div>
 
-
+<%= render partial: "/shared/errors", locals: {object: @contributions} %>
 
 <%= form_for @story.contributions.build do |f| %>
-  <%= f.hidden_field :story_id, value: @story.id %>
-  
-  <p>
-    <%= f.label :content, "Continue the story..." %><br><br>
-    <%= f.text_area :body %>
-  </p>
-  
-  <%= f.submit %>
-<% end %>
+    <%= f.hidden_field :story_id, value: @story.id %>
+    
+    <p>
+      <%= f.label :content, "Continue the story..." %><br><br>
+      <%= f.text_area :body %>
+    </p>
+    
+    <%= f.submit %>
+  <% end %>
 
-<br>
-<br>
+  <br>
+  <br>

@@ -15,9 +15,8 @@
   </h1>
 </div>
 
-
-
 <%= form_for @story.contributions.build do |f| %>
+
     <%= f.hidden_field :story_id, value: @story.id %>
     
     <p>
