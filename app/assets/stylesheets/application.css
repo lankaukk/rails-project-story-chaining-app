@@ -18,6 +18,7 @@
      background-color: ;
      padding-left: 10vw;
      padding-right: 10vw;
+     padding-bottom: 10vw;
 
      font-family: 'Courier New', Courier, monospace;
  }
@@ -46,8 +47,17 @@
 .story {
   background-color: antiquewhite;
   padding: 3%;
+  border-radius: 10px;
 }
 
 textarea, input {
   width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+li {
+  background-color: rgb(195, 231, 239);
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
 }

@@ -4,15 +4,14 @@
 
 <br>
 
-<h3>You have started 
+<h3>You have participated in
   <%= @user.contributions.count %>
     story chains, <%=@user.first_name%>:</h3>
-<ul>
-  <% @user.contributions.each do |s|%>
-    <li>  <%= link_to story_path(s) %> </li>
-  <% end %>
 
-  
+<ul>
+  <% @user.contributions.each do |c|%>
+    <li>  <%= link_to c.story.hook, story_path(c.story) %> </li>
+  <% end %>
 </ul>
 
 <a href="/stories/new">Create a New Story</a><br>

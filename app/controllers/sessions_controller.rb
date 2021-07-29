@@ -11,9 +11,11 @@ class SessionsController < ApplicationController
             # end
             ##this line wass commented out v
             user = User.find_or_create_from_github(auth)
-            if user 
-                redirect_to user_path
+            if user.persisted?
+                session[:user_id] = user.id
+                redirect_to user_path(user)
             else
+               
                 redirect_to '/'
             end
         else

@@ -16,13 +16,12 @@ class ContributionsController < ApplicationController
       # @contribution = @story.contributions.build(contribution_params)
 
       @contribution = current_user.contributions.build(contribution_params)
-
-      if @contribution.save
-        redirect_to @contribution.story
-      else
-        flash[:notice] = "Didn't work."
-        redirect_to @contribution.story
+      
+      if !@contribution.save
+        flash[:notice] = "Didn't work." 
       end
+      
+      redirect_to @contribution.story
     end
   
     private
