@@ -26,9 +26,12 @@
     def show
         if !logged_in?
             redirect_to '/'
-        else
-            @user = current_user
+        elsif
+            @user = User.find_by(id: params[:id]) 
             @stories = @user.stories
+        else
+            @user = nil
+            redirect_to '/'
         end
     end
      

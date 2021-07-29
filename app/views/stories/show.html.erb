@@ -10,7 +10,7 @@
 
   <h1>
       <% @contributions.each do |c| %>
-          <%= c.body %>
+        <%= link_to c.body, user_path(c.user_id), method: :get %>
       <% end %>
   </h1>
 </div>

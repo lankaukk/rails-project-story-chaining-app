@@ -14,38 +14,46 @@
  *= require_self
  */
 
- body {
-     background-color: ;
-     padding-left: 10vw;
-     padding-right: 10vw;
-     padding-bottom: 10vw;
+body {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 10vw;
 
-     font-family: 'Courier New', Courier, monospace;
- }
+  font-family: 'Courier New', Courier, monospace;
+  background-image: url("chain.png");
+  background-repeat: no-repeat;
+}
 
- .logo {
+.chains {
+  
+  height: 100vh;
+  position: fixed;
+  right: 0px;
+}
+
+.logo {
+  letter-spacing: 1em;
+  font-weight: bolder;
+  color: grey;
+  animation: fancy 8s infinite alternate forwards;
+}
+  
+@keyframes fancy {
+  0% {
     letter-spacing: 1em;
-    font-weight: bolder;
-    color: grey;
-    animation: fancy 8s infinite alternate forwards;
   }
   
-  @keyframes fancy {
-    0% {
-        letter-spacing: 1em;
-    }
-  
-    100% {
-        letter-spacing: 2em;
-    }
+  100% {
+    letter-spacing: 2em;
   }
+}
 
 #error_explanation {
     color: rgb(175, 8, 8);
   }
 
 .story {
-  background-color: antiquewhite;
+  background-color: rgb(195, 231, 239);
   padding: 3%;
   border-radius: 10px;
 }
@@ -60,4 +68,12 @@ li {
   margin: 10px;
   border-radius: 10px;
   padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color:rgb(175, 8, 8);
 }

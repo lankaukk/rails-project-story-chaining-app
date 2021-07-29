@@ -11,9 +11,9 @@
 
 <br>
 
-<h3>You have participated in
+<h3> <%=@user.first_name%> has contributed to Story Chains
   <%= @user.contributions.count %>
-    story chains <%=@user.first_name%>:</h3>
+    times: </h3>
 
 <ul>
   <% @user.contributions.reverse.each do |c|%>
