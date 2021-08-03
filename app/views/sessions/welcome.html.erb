@@ -1,9 +1,14 @@
 <center> <h1>Welcome to the Story Chanining App!</h1></center>
 
-<center><p>
+<center>
+
+<div class="welcome-box">
+<p>
   <%= link_to "Login", login_path %><br><br>
-  OR<br><br>
-  <%= link_to "Signup with email", signup_path %><br><br>
-  OR<br><br>
+  <%= link_to "Sign up with email", signup_path %><br><br>
+  —<br><br>
   <%= link_to "Sign in with Github", "/auth/github", method: :post %>
-</p></center>
+</p>
+</div>
+
+</center>

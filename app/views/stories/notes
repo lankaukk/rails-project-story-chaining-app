@@ -1,0 +1,10 @@
+<% if @story.errors.any? %>
+    <div id= "error_explanation">
+        <h2> <%= @story.errors.size%> error(s): </h2>
+        <ul>
+            <% @story.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

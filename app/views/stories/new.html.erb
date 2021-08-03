@@ -1,21 +1,14 @@
+<%= link_to " < Back to All Stories", stories_path, method: :get %>
+<br>
+
 <h1>Start a New Story!</h1>
+
+<h4> A hook (or narrative hook) is the literary technique of creating an enticing beginning—the very first line or opening of a story—designed to capture readers' interest. </h4>
+<h4> Start your new story with a good hook: </h4>
 
 <%= render partial: "/shared/errors", locals: {object: @story} %>
 
 <%= form_for @story do |f| %>
-
-<% if @story.errors.any? %>
-    <div id= "error_explanation">
-        <h2> <%= @story.errors.size%> error(s): </h2>
-        <ul>
-            <% @story.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-        </ul>
-    </div>
-<% end %>
-
-  <%= f.label :hook %><br>
   <%= f.text_field :hook %><br>
   <br />
 
