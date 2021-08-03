@@ -1,26 +1,19 @@
-# README
+# Story Chaining App
 
-hiii
+Welcome to the Story Chaining App! Once you create an account, users can create the beginning hooks for a stories, view them, and add to them. You can contribute to your own story or others. That is the beauty of Story Chains, you never know where the story will go! 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+To use this app, clone, run bundle install, run rails db:migrate and then run rails server. Follow the local host route (http://127.0.0.1:3000) in your browser. Everything should be set up.
 
-* Ruby version
+## Contributing
 
-* System dependencies
+Bug reports and pull requests are welcome on GitHub at https://github.com/lankaukk/rails-project-story-chaining-app.
 
-* Configuration
+## License
 
-* Database creation
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-* Database initialization
+## Version
+Using Rails version 6.1.3
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
