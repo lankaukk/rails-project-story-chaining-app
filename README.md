@@ -4,7 +4,7 @@ Welcome to the Story Chaining App! Once you create an account, users can create 
 
 ## Installation
 
-To use this app, clone, run bundle install, run rails db:migrate and then run rails server. Follow the local host route (http://127.0.0.1:3000) in your browser. Everything should be set up.
+To use this app, clone this repository, run bundle install, run rails db:migrate and then run rails server. Follow the local host route (http://127.0.0.1:3000) in your browser. Everything should be set up.
 
 ## Contributing
 
