@@ -43,10 +43,6 @@ class StoriesController < ApplicationController
     end 
 
     def destroy
-        # @story = Story.find(params[:id])
-        # @story.destroy
-        # flash[:notice] = "Story deleted."
-        # redirect_to stories_path
         session.delete(:user_id)
         redirect_to '/'
     end
