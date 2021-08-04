@@ -13,8 +13,8 @@ Specs:
 - [x] Include login
 - [x] Include logout
 - [x] [Can login and signup with github] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [x] Include nested resource show or index (URL e.g. users/2/recipes)
-- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] [stories/2/contributions redirects to stories/2 beacuse the contributions are displayed on the story show page] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] [new contribution form is within the stories show page] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
