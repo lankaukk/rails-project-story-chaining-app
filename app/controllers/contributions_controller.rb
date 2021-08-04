@@ -13,7 +13,7 @@ class ContributionsController < ApplicationController
     def create
     @contribution = current_user.contributions.build(contribution_params)
       if !@contribution.save
-        flash.alert = "Didn't work."
+        flash[:error] = "Contribution must be 6-100 characters."
       end
       redirect_to @contribution.story
     end
@@ -22,6 +22,5 @@ class ContributionsController < ApplicationController
   
     def contribution_params
       params.require(:contribution).permit(:body, :story_id)
-    #   , :story_id, :user_id, user_attributes:[:first_name][:last_name])
     end
 end

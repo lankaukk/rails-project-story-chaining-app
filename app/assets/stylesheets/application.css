@@ -18,7 +18,7 @@ body {
   padding-left: 10vw;
   padding-right: 10vw;
   padding-bottom: 10vw;
-
+  color: black;
   font-family: 'Courier New', Courier, monospace;
   background-image: url("papers.png");
   background-repeat:repeat-y;
@@ -91,8 +91,13 @@ ul {
 
 a {
   text-decoration: none;
+  color: blue;
 }
 
-a:hover {
+a:hover, a:visited:hover {
   color:rgb(175, 8, 8);
+}
+
+a:visited {
+  color: blue;
 }
