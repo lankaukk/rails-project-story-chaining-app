@@ -21,8 +21,9 @@
     <div id="error_explanation">
         <%= msg %>
     </div>
-    <br>
 <% end %>
+
+<br>
 
 <%= form_for @story.contributions.build do |f| %>
     <%= f.hidden_field :story_id, value: @story.id %>

@@ -2,6 +2,7 @@ class ContributionsController < ApplicationController
 
     def index
       @contributions = Contribution.all
+      # make method to do this
       @story = Story.find_by_id(params[:story_id])
       redirect_to @story
     end

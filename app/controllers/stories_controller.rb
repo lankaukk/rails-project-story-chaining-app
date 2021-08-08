@@ -15,7 +15,7 @@ class StoriesController < ApplicationController
 
     def create
         @story = current_user.stories.build(story_params)
-        
+        byebug
         if @story.save
           redirect_to @story
         else
