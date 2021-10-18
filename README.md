@@ -2,6 +2,9 @@
 
 Welcome to the Story Chaining App! Once you create an account, users can create the beginning hooks for a stories, view them, and add to them. You can contribute to your own story or others. That is the beauty of Story Chains, you never know where the story will go! 
 
+## Demo
+https://www.youtube.com/watch?v=gXAmPo1O5nc&t=2s
+
 ## Installation
 
 To use this app, clone this repository, run bundle install, run rails db:migrate and then run rails server. Follow the local host route (http://127.0.0.1:3000) in your browser. Everything should be set up.
